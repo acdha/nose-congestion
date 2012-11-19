@@ -4,7 +4,7 @@ import os
 ROOT = os.path.dirname(__file__)
 
 setup(name='nose-congestion',
-      version='0.0.1',
+      version='0.0.2',
       author='Chris Adams',
       author_email='chris@improbable.org',
       url='http://github.com/acdha/nose-congestion',
