@@ -5,6 +5,8 @@ nose-congestion
 Nose can report test execution time in its various output formats but it
 doesn't include the `setUp` or `tearDown` time, which can be substantial.
 
+.. image:: https://travis-ci.org/acdha/nose-congestion.svg?branch=master   :target: https://travis-ci.org/acdha/nose-congestion
+
 Usage
 -----
 
