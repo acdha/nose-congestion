@@ -25,3 +25,9 @@ After all of the tests complete, a simple table will be printed::
     ----------------------------------------------------------------------
       0.104  module.tests.SlowTests.test_method
       0.009  module.tests.FastTests.test_method
+
+Requirements
+------------
+
+* nose
+* Python 2.6+, Python 3.3+
