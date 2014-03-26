@@ -2,6 +2,7 @@
 from __future__ import absolute_import, print_function, unicode_literals
 
 import os
+import sys
 
 from setuptools import setup
 
@@ -22,4 +23,5 @@ setup(name='nose-congestion',
               'congestion = nose_congestion:CongestionPlugin',
           ]
       },
-      )
+      setup_requires=['nose>=1.0'],
+      test_suite = 'nose.collector')
