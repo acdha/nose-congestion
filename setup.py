@@ -1,10 +1,14 @@
-from setuptools import setup, find_packages
+# encoding: utf-8
+from __future__ import absolute_import, print_function, unicode_literals
+
 import os
+
+from setuptools import setup
 
 ROOT = os.path.dirname(__file__)
 
 setup(name='nose-congestion',
-      version='0.0.2',
+      version='0.0.3',
       author='Chris Adams',
       author_email='chris@improbable.org',
       url='http://github.com/acdha/nose-congestion',
@@ -13,9 +17,9 @@ setup(name='nose-congestion',
       py_modules=['nose_congestion'],
       include_package_data=True,
       zip_safe=False,
-      entry_points = {
-            'nose.plugins.0.10': [
-                'congestion = nose_congestion:CongestionPlugin',
-            ]
-        },
-     )
+      entry_points={
+          'nose.plugins.0.10': [
+              'congestion = nose_congestion:CongestionPlugin',
+          ]
+      },
+      )

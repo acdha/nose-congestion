@@ -1,11 +1,11 @@
 # encoding: utf-8
-from __future__ import absolute_import
+from __future__ import absolute_import, print_function
 
-from inspect import ismodule
-from functools import wraps
-from time import time
 import operator
 import os
+from functools import wraps
+from inspect import ismodule
+from time import time
 
 from nose.plugins import Plugin
 
@@ -92,19 +92,21 @@ class CongestionPlugin(Plugin):
         self._register_time(test)
 
     def report(self, stream):
-        print >>stream, "%-43s %8s %8s %8s" % ('Location', 'Total',
-                                               'setUp', 'tearDown')
-        print >>stream, '-' * 70
+        print("%-43s %8s %8s %8s" % ('Location', 'Total', 'setUp', 'tearDown'),
+              file=stream)
+        print('-' * 70, file=stream)
 
         fmt = "{0:43s} {total:>8.3f} {setUp:>8.3f} {tearDown:>8.3f}"
         for context_name in sorted(self.elapsed_times.keys()):
             times = self.elapsed_times[context_name]
-            print >>stream, fmt.format(context_name, **times)
+            print(fmt.format(context_name, **times), file=stream)
 
-        print >>stream
-        print >>stream, "%7s  %-60s" % ('Total', 'Location')
-        print >>stream, '-' * 70
+        print(file=stream)
+        print("%7s  %-60s" % ('Total', 'Location'), file=stream)
+        print('-' * 70, file=stream)
+
         fmt = "{0[1]:>7.3f}  {0[0]:60s}"
-        for timed in sorted(self.timed_tests.iteritems(),
+
+        for timed in sorted(self.timed_tests.items(),
                             key=operator.itemgetter(1), reverse=True):
-            print >>stream, fmt.format(timed)
+            print(fmt.format(timed), file=stream)
